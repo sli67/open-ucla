@@ -1,0 +1,13 @@
+[Unit]
+Description=open-ucla Next.js server
+After=network.target
+
+[Service]
+WorkingDirectory=/home/ubuntu/open-ucla
+ExecStart=/home/ubuntu/.bun/bin/bun run start -p 80
+Restart=always
+RestartSec=3
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
